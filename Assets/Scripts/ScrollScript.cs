@@ -12,21 +12,21 @@ public class ScrollScript : MonoBehaviour
     public float spawnWait;
     public float startWait;
     public float waveWait;
+    public int wave_count;
 
     void Start()
     {
         StartCoroutine(SpawnWaves());
-        theCamera = Camera.main.transform;
     }
 
     void Update()
     {
-        theCamera.position = new Vector3(theCamera.position.x, theCamera.position.y + theScrollSpeed, theCamera.position.z);
+        
     }
     IEnumerator SpawnWaves()
     {
         yield return new WaitForSeconds(startWait);
-        while (true)
+        while (wave_count != 0)
         {
             for (int i = 0; i < hazardCount; i++)
             {
@@ -36,6 +36,7 @@ public class ScrollScript : MonoBehaviour
                 yield return new WaitForSeconds(spawnWait);
             }
             yield return new WaitForSeconds(waveWait);
+            wave_count--;
         }
     }
 }

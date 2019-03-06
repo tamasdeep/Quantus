@@ -5,7 +5,6 @@ using UnityEngine;
 public class astroid : MonoBehaviour
 {
     public GameObject explosion;
-    public GameObject playerexplosion;
 
     // Start is called before the first frame update
     void Start()
@@ -26,11 +25,12 @@ public class astroid : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(hit.gameObject);
-            playerexplosion.transform.localScale = new Vector3(2, 2, 2);
-            Instantiate(playerexplosion, hit.transform.position, hit.transform.rotation);
+            explosion.transform.localScale = new Vector3(2, 2, 2);
+            Instantiate(explosion, hit.transform.position, hit.transform.rotation);
         }
         if (hit.transform.gameObject.tag.Equals("Bullet"))
         {
+            explosion.transform.localScale = new Vector3(1, 1, 1);
             Instantiate(explosion, transform.position, transform.rotation);
             Destroy(gameObject);
             Destroy(hit.gameObject);

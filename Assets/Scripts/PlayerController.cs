@@ -15,10 +15,12 @@ public class PlayerController : MonoBehaviour
     public float speed = 10.0f;
     public Boundary boundary;
 
-    public GameObject shot;
+    public GameObject shot1;
+    public GameObject shot2;
     public Transform shotSpawn;
     public float fireRate;
     private float nextFire;
+    bool weaponSwitch = false;
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -27,10 +29,21 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.Q))
+        {
+            weaponSwitch = !weaponSwitch;
+        }
         if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
-            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+            if (!weaponSwitch)
+            {
+                Instantiate(shot1, shotSpawn.position, shotSpawn.rotation);
+            }
+            else
+            {
+                Instantiate(shot2, shotSpawn.position, shotSpawn.rotation);
+            }
         }
     }
 
