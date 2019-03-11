@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rigidbody2D;
     public float speed = 10.0f;
     public Boundary boundary;
-
+    public float health;
     public GameObject shot1;
     public GameObject shot2;
     public Transform shotSpawn;
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKeyUp(KeyCode.Q))
         {
             weaponSwitch = !weaponSwitch;
         }
@@ -45,6 +45,8 @@ public class PlayerController : MonoBehaviour
                 Instantiate(shot2, shotSpawn.position, shotSpawn.rotation);
             }
         }
+
+
     }
 
     void FixedUpdate()

@@ -15,9 +15,9 @@ TagManager:
   - 
   - 
   - bound
-  - bullet_enemy
+  - bullet
   - player
-  - 
+  - enemy
   - 
   - 
   - 

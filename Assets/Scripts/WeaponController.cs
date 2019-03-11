@@ -9,11 +9,15 @@ public class WeaponController : MonoBehaviour
     GameObject astergun;
     GameObject lasergun;
     private float timeCount = 0.0f;
+    public GameObject crosshair1;
+    public GameObject crosshair2;
     void Start()
     {
         astergun = gameObject.transform.GetChild(0).gameObject;
         lasergun = gameObject.transform.GetChild(1).gameObject;
         lasergun.SetActive(false);
+        crosshair1.SetActive(!weaponToggle);
+        crosshair2.SetActive(weaponToggle);
     }
 
     // Update is called once per frame
@@ -25,9 +29,12 @@ public class WeaponController : MonoBehaviour
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
         transform.up = direction;
-
-        if (Input.GetKeyDown(KeyCode.Q))
+        crosshair1.transform.up = direction;
+        if (Input.GetKeyUp(KeyCode.Q))
         {
+            crosshair1.SetActive(weaponToggle);
+            crosshair2.SetActive(!weaponToggle);
+            crosshair2.transform.up = direction;
             lasergun.SetActive(!weaponToggle);
             //Transform to = lasergun.transform;
             //to.transform.Rotate(0.0f, 1.0f, 0.0f);

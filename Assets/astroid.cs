@@ -15,7 +15,7 @@ public class astroid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnCollisionEnter2D(Collision2D hit)
@@ -24,13 +24,20 @@ public class astroid : MonoBehaviour
         if (hit.transform.gameObject.name.Equals("Player"))
         {
             Destroy(gameObject);
-            Destroy(hit.gameObject);
-            explosion.transform.localScale = new Vector3(2, 2, 2);
+            hit.gameObject.GetComponent<PlayerController>().health = hit.gameObject.GetComponent<PlayerController>().health - 25;
+            explosion.transform.localScale = new Vector3(.2f, .2f, .2f);
             Instantiate(explosion, hit.transform.position, hit.transform.rotation);
+            if (hit.gameObject.GetComponent<PlayerController>().health <= 0)
+            {
+                Destroy(hit.gameObject);
+                explosion.transform.localScale = new Vector3(2, 2, 2);
+                Instantiate(explosion, hit.transform.position, hit.transform.rotation);
+            }
+
         }
         if (hit.transform.gameObject.tag.Equals("Bullet"))
         {
-            explosion.transform.localScale = new Vector3(1, 1, 1);
+            explosion.transform.localScale = new Vector3(.1f, .1f, .1f);
             Instantiate(explosion, transform.position, transform.rotation);
             Destroy(gameObject);
             Destroy(hit.gameObject);

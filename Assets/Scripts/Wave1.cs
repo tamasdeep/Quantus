@@ -2,26 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScrollScript : MonoBehaviour
+public class Wave1 : MonoBehaviour
 {
-    public float theScrollSpeed = 0.025f;
     public GameObject hazard;
     public Transform spawnValues;
-    Transform theCamera;
     public int hazardCount;
     public float spawnWait;
     public float startWait;
     public float waveWait;
     public int wave_count;
+    public GameObject next;
 
     void Start()
     {
+        hazard.GetComponent<Rigidbody2D>().isKinematic = false;
         StartCoroutine(SpawnWaves());
     }
 
     void Update()
     {
-        
+        if(wave_count == 0)
+        {
+            next.gameObject.GetComponent<Wave2>().enabled = true;
+        }
     }
     IEnumerator SpawnWaves()
     {
