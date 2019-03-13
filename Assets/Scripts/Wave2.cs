@@ -13,7 +13,7 @@ public class Wave2 : MonoBehaviour
     public float startWait;
     public float waveWait;
     private int wave_count;
-    public GameObject next;
+    public GameObject[] next;
 
     void Start()
     {
@@ -25,6 +25,8 @@ public class Wave2 : MonoBehaviour
     void Update()
     {
 
+            
+        
     }
     IEnumerator SpawnWaves1()
     {
@@ -59,6 +61,13 @@ public class Wave2 : MonoBehaviour
             yield return new WaitForSeconds(waveWait);
             wave_count++;
         }
+        yield return new WaitForSeconds(5);
+        foreach (GameObject n in next)
+        {
+            n.gameObject.GetComponent<Wave3>().enabled = true;
+            yield return new WaitForSeconds(2);
+        }
+        
     }
 
 }

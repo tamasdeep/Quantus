@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 10.0f;
     public Boundary boundary;
     public float health;
+    public float myscore;
     public GameObject shot1;
     public GameObject shot2;
     public Transform shotSpawn;
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
     bool weaponSwitch = false;
     void Start()
     {
+        myscore = 0;
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
 

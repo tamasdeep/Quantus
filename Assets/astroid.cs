@@ -5,7 +5,7 @@ using UnityEngine;
 public class astroid : MonoBehaviour
 {
     public GameObject explosion;
-
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +37,7 @@ public class astroid : MonoBehaviour
         }
         if (hit.transform.gameObject.tag.Equals("Bullet"))
         {
+            player.gameObject.GetComponent<PlayerController>().myscore = player.gameObject.GetComponent<PlayerController>().myscore + 10;
             explosion.transform.localScale = new Vector3(.1f, .1f, .1f);
             Instantiate(explosion, transform.position, transform.rotation);
             Destroy(gameObject);
