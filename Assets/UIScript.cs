@@ -10,7 +10,7 @@ public class UIScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player.GetComponent<PlayerController>().myscore = 0;
     }
 
     // Update is called once per frame
@@ -18,7 +18,7 @@ public class UIScript : MonoBehaviour
     {
         if (!player)
         {
-            player.GetComponent<PlayerController>().myscore = 0;
+            
             gameover.SetActive(true);
         }
         if (GetComponent<Text>().text.Contains("Health") && player)
