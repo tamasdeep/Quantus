@@ -4,6 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Bullet1
+  - Bullet2
   - Bullet
   layers:
   - Default

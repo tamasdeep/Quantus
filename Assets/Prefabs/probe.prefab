@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6517062397943251684
 Transform:
   m_ObjectHideFlags: 0
@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 2164191856871096657}
   - component: {fileID: 1355949517097300705}
   - component: {fileID: 8938662111264968459}
+  - component: {fileID: 50448743908158738}
   m_Layer: 13
   m_Name: probe
   m_TagString: Untagged
@@ -106,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2164191856871096662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 6.44, y: 3.65, z: 0}
   m_LocalScale: {x: 1.4272, y: 1.4272, z: 1.4272}
   m_Children:
   - {fileID: 2164191858750688817}
@@ -190,6 +191,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53cc4ae3004c624eb80bdcbd1718eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  proberader: {fileID: 2164191858750688822}
+  green: {fileID: 1537261095713833878}
+--- !u!50 &50448743908158738
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2164191856871096662}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2164191858750688822
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +225,7 @@ GameObject:
   - component: {fileID: 2164191858750688817}
   - component: {fileID: 2164191858750688819}
   - component: {fileID: 2164191858750688816}
+  - component: {fileID: 2926535874792399911}
   m_Layer: 12
   m_Name: noiseradar
   m_TagString: Untagged
@@ -286,3 +311,16 @@ CircleCollider2D:
   m_Offset: {x: -0.010509748, y: 0.02096284}
   serializedVersion: 2
   m_Radius: 3.600202
+--- !u!114 &2926535874792399911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2164191858750688822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cddc2c82ea2afda428237485b6c4c6ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 1000010608846784, guid: 6747b1742d70743a8aff8594e708b2f7, type: 3}

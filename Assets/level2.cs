@@ -48,11 +48,11 @@ public class level2 : MonoBehaviour
         {
             if (i == wspawnValues.Length - 1)
             {
-                hazards[i].transform.position = Vector2.MoveTowards(hazards[i].transform.position, wspawnValues[0].position, step);
+                hazards[i].transform.position = Vector2.MoveTowards(hazards[i].transform.position, wspawnValues[0].position, speed * Time.deltaTime);
             }
             else
             {
-                hazards[i].transform.position = Vector2.MoveTowards(hazards[i].transform.position, wspawnValues[i + 1].position, step);
+                hazards[i].transform.position = Vector2.MoveTowards(hazards[i].transform.position, wspawnValues[i + 1].position, speed * Time.deltaTime);
             }
         }
     }

@@ -23,7 +23,7 @@ public class UIScript : MonoBehaviour
         }
         if (GetComponent<Text>().text.Contains("Health") && player)
         {
-            GetComponent<Text>().text = "Health: " + player.GetComponent<PlayerController>().health;
+            GetComponent<Text>().text = "Health: " + (int) player.GetComponent<PlayerController>().health;
         }
 
         if (GetComponent<Text>().text.Contains("Score"))

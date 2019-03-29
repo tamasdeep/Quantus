@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wave1 : MonoBehaviour
+public class wave4 : MonoBehaviour
 {
     public GameObject hazard;
     public Transform spawnValues;
@@ -15,13 +15,14 @@ public class Wave1 : MonoBehaviour
 
     void Start()
     {
+        hazard.AddComponent<Rigidbody2D>();
         hazard.GetComponent<Rigidbody2D>().isKinematic = false;
         StartCoroutine(SpawnWaves());
     }
 
     void Update()
     {
-        if(wave_count == 0 && next != null)
+        if (wave_count == 0 && next != null)
         {
             next.gameObject.GetComponent<Wave2>().enabled = true;
         }
@@ -33,7 +34,7 @@ public class Wave1 : MonoBehaviour
         {
             for (int i = 0; i < hazardCount; i++)
             {
-                Vector2 spawnPosition = new Vector2(Random.Range(-7, 7), spawnValues.position.y-2);
+                Vector2 spawnPosition = new Vector2(Random.Range(-7, 7), spawnValues.position.y - 2);
                 Quaternion spawnRotation = Quaternion.identity;
                 Instantiate(hazard, spawnPosition, spawnRotation);
                 yield return new WaitForSeconds(spawnWait);
