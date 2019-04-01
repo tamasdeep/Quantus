@@ -7,6 +7,8 @@ TagManager:
   - Bullet1
   - Bullet2
   - Bullet
+  - probe
+  - astroid
   layers:
   - Default
   - TransparentFX
@@ -22,8 +24,8 @@ TagManager:
   - enemy
   - radar
   - probe
-  - 
-  - 
+  - astroid
+  - bullet2
   - 
   - 
   - 

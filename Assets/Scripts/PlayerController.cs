@@ -22,10 +22,14 @@ public class PlayerController : MonoBehaviour
     public float fireRate;
     private float nextFire;
     bool weaponSwitch = false;
+    public AudioClip bullet1;
+    public AudioClip bullet2;
+    private AudioSource audioSource;
     void Start()
     {
         myscore = 0;
         rigidbody2D = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -41,10 +45,12 @@ public class PlayerController : MonoBehaviour
             if (!weaponSwitch)
             {
                 Instantiate(shot1, shotSpawn.position, shotSpawn.rotation);
+                audioSource.PlayOneShot(bullet1);
             }
             else
             {
                 Instantiate(shot2, shotSpawn.position, shotSpawn.rotation);
+                audioSource.PlayOneShot(bullet2);
             }
         }
 

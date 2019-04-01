@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Wave1 : MonoBehaviour
 {
@@ -12,9 +13,11 @@ public class Wave1 : MonoBehaviour
     public float waveWait;
     public int wave_count;
     public GameObject next;
-
+    public Text LevelHeading;
     void Start()
     {
+
+        StartCoroutine(ShowMessage(LevelHeading, "Level 1", 5));
         hazard.GetComponent<Rigidbody2D>().isKinematic = false;
         StartCoroutine(SpawnWaves());
     }
@@ -41,5 +44,12 @@ public class Wave1 : MonoBehaviour
             yield return new WaitForSeconds(waveWait);
             wave_count--;
         }
+    }
+    IEnumerator ShowMessage(Text guiText, string message, float delay)
+    {
+        guiText.text = message;
+        guiText.enabled = true;
+        yield return new WaitForSeconds(delay);
+        guiText.enabled = false;
     }
 }

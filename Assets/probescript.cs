@@ -8,10 +8,13 @@ public class probescript : MonoBehaviour
     public GameObject green;
     private float timehit = 0.0f;
     private float repeattime = 2.0f;
+    public AudioClip deactivateSound;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
         //InvokeRepeating("updateprobe", 1.0f, 3.0f);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,12 +37,13 @@ public class probescript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag.Equals("Bullet2"))
+        if (col.gameObject.tag.Equals("Bullet2") && proberader.activeSelf)
         {
             Destroy(col.gameObject);
             proberader.SetActive(false);
             green.SetActive(true);
             timehit = Time.fixedTime;
+            audioSource.PlayOneShot(deactivateSound);
         }
     }
 }

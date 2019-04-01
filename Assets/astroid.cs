@@ -27,7 +27,7 @@ public class astroid : MonoBehaviour
             hit.gameObject.GetComponent<PlayerController>().health = hit.gameObject.GetComponent<PlayerController>().health - 25;
             explosion.transform.localScale = new Vector3(.2f, .2f, .2f);
             Instantiate(explosion, hit.transform.position, hit.transform.rotation);
-            if (hit.gameObject.GetComponent<PlayerController>().health <= 0)
+            if (hit.gameObject.GetComponent<PlayerController>().health == 0)
             {
                 Destroy(hit.gameObject);
                 explosion.transform.localScale = new Vector3(2, 2, 2);
@@ -35,7 +35,7 @@ public class astroid : MonoBehaviour
             }
 
         }
-        if (hit.transform.gameObject.tag.Equals("Bullet"))
+        if (hit.transform.gameObject.tag.Equals("Bullet1"))
         {
             player.gameObject.GetComponent<PlayerController>().myscore = player.gameObject.GetComponent<PlayerController>().myscore + 10;
             explosion.transform.localScale = new Vector3(.1f, .1f, .1f);

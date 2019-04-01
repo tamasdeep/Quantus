@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5105596585642688226}
   - component: {fileID: 5105596585642688227}
   - component: {fileID: 5105596585642688255}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: astroid
-  m_TagString: Untagged
+  m_TagString: astroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!58 &5105596585642688227
 CircleCollider2D:
