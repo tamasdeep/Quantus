@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - probe
   - astroid
+  - bulletcatcher
   layers:
   - Default
   - TransparentFX
@@ -26,9 +27,9 @@ TagManager:
   - probe
   - astroid
   - bullet2
-  - 
-  - 
-  - 
+  - enemyship
+  - enemyshipbullet
+  - health
   - 
   - 
   - 
@@ -54,4 +55,10 @@ TagManager:
     locked: 0
   - name: Weapon
     uniqueID: 2963964097
+    locked: 0
+  - name: enemylargeship
+    uniqueID: 2697562367
+    locked: 0
+  - name: enemylargelayerpart
+    uniqueID: 3407169481
     locked: 0

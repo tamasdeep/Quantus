@@ -17,7 +17,7 @@ public class Wave1 : MonoBehaviour
     void Start()
     {
 
-        StartCoroutine(ShowMessage(LevelHeading, "Level 1", 5));
+        StartCoroutine(ShowMessage(LevelHeading, "Level 1: Proximitas", 5));
         hazard.GetComponent<Rigidbody2D>().isKinematic = false;
         StartCoroutine(SpawnWaves());
     }

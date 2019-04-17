@@ -12,9 +12,12 @@ public class level2wave2 : MonoBehaviour
     private float nexttime;
     private int WavesControllevelsIndex = 0;
     private int SplineWalkerlevelsIndex = 0;
+    public GameObject next;
+    
     void Start()
     {
-        StartCoroutine(ShowMessage(LevelHeading, "Level 2", 5));
+       
+        StartCoroutine(ShowMessage(LevelHeading, "Level 2: Probabilitas", 5));
         WavesControllevels = new List<WavesControl[]>();
         SplineWalkerlevels = new List<SplineWalker[]>();
         foreach (GameObject l in levels)
@@ -56,6 +59,9 @@ public class level2wave2 : MonoBehaviour
                         destroyprobes();
                         s.enabled = false;
                         this.enabled = false;
+                        if ((int)Time.time == (int)nexttime) { 
+                            next.SetActive(true);
+                        }
                     }
                 }
                 else
@@ -111,7 +117,7 @@ public class level2wave2 : MonoBehaviour
                 }
                 WavesControllevelsIndex++;
             }
-            nexttime = Time.time + 45;
+            nexttime = Time.time + 10;
 
         }
 

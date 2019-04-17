@@ -20,6 +20,7 @@ public class UIScript : MonoBehaviour
         {
             
             gameover.SetActive(true);
+            Cursor.visible = true;
         }
         if (GetComponent<Text>().text.Contains("Health") && player)
         {

@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     private AudioSource audioSource;
     void Start()
     {
+        Cursor.visible = false;
         myscore = 0;
         rigidbody2D = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
@@ -53,8 +54,6 @@ public class PlayerController : MonoBehaviour
                 audioSource.PlayOneShot(bullet2);
             }
         }
-
-
     }
 
     void FixedUpdate()

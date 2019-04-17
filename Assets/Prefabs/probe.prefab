@@ -194,6 +194,7 @@ MonoBehaviour:
   proberader: {fileID: 2164191858750688822}
   green: {fileID: 1537261095713833878}
   deactivateSound: {fileID: 8300000, guid: f2fede50743ddb94dab1392135d6a185, type: 3}
+  player: {fileID: 2717652620085896041, guid: fa602e372dc989848a4ceeca71d95ae4, type: 3}
 --- !u!82 &1230280742290409467
 AudioSource:
   m_ObjectHideFlags: 0

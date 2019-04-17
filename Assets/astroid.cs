@@ -27,7 +27,7 @@ public class astroid : MonoBehaviour
             hit.gameObject.GetComponent<PlayerController>().health = hit.gameObject.GetComponent<PlayerController>().health - 25;
             explosion.transform.localScale = new Vector3(.2f, .2f, .2f);
             Instantiate(explosion, hit.transform.position, hit.transform.rotation);
-            if (hit.gameObject.GetComponent<PlayerController>().health == 0)
+            if (hit.gameObject.GetComponent<PlayerController>().health <= 0)
             {
                 Destroy(hit.gameObject);
                 explosion.transform.localScale = new Vector3(2, 2, 2);

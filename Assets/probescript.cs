@@ -10,6 +10,7 @@ public class probescript : MonoBehaviour
     private float repeattime = 2.0f;
     public AudioClip deactivateSound;
     private AudioSource audioSource;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +40,7 @@ public class probescript : MonoBehaviour
     {
         if (col.gameObject.tag.Equals("Bullet2") && proberader.activeSelf)
         {
+            player.gameObject.GetComponent<PlayerController>().myscore = player.gameObject.GetComponent<PlayerController>().myscore + 5;
             Destroy(col.gameObject);
             proberader.SetActive(false);
             green.SetActive(true);

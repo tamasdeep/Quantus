@@ -8,9 +8,9 @@ public class SplineDecorator : MonoBehaviour {
 
 	public bool lookForward;
 
-	public Transform[] items;
+	public GameObject[] items;
 
-	private void Awake () {
+	public void Start () {
 		if (frequency <= 0 || items == null || items.Length == 0) {
 			return;
 		}
@@ -23,7 +23,7 @@ public class SplineDecorator : MonoBehaviour {
 		}
 		for (int p = 0, f = 0; f < frequency; f++) {
 			for (int i = 0; i < items.Length; i++, p++) {
-				Transform item = Instantiate(items[i]) as Transform;
+                GameObject item = Instantiate(items[i]) as GameObject;
 				Vector3 position = spline.GetPoint(p * stepSize);
 				item.transform.localPosition = position;
 				if (lookForward) {
